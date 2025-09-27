@@ -6,7 +6,7 @@
 /*   By: tbhuiyan <tbhuiyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 19:15:47 by tbhuiyan          #+#    #+#             */
-/*   Updated: 2025/09/24 19:23:30 by tbhuiyan         ###   ########.fr       */
+/*   Updated: 2025/09/27 09:33:00 by tbhuiyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ char	**ft_split(char *str)
 			k++;
 		}
 	}
-	tab[k] = '\0';
+	tab[k] = 'NULL';
 	return (tab);
 }
