@@ -6,7 +6,7 @@
 /*   By: tbhuiyan <tbhuiyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 11:35:49 by tbhuiyan          #+#    #+#             */
-/*   Updated: 2025/09/23 11:42:05 by tbhuiyan         ###   ########.fr       */
+/*   Updated: 2025/10/15 14:20:52 by tbhuiyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 {
 	int	i = 0;
 
-	if (ac == 2) // verification des arguments
+	if (ac == 3) // verification des arguments
 	{
 		ft_strcat(av[1], av[2]); // on concatene le tout et on parcours av[1]
 		while (av[1][i])
