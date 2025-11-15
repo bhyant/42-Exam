@@ -6,7 +6,7 @@
 /*   By: tbhuiyan <tbhuiyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 15:51:00 by tbhuiyan          #+#    #+#             */
-/*   Updated: 2025/09/24 15:55:52 by tbhuiyan         ###   ########.fr       */
+/*   Updated: 2025/11/15 21:37:42 by tbhuiyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	int tmp; // tmp pour swap les valeurs
 	t_list *head; // nouvelle list avec les maillons triee
 
-	head = tmp;
+	head = lst;
 	while (lst != NULL && lst->next != NULL) // tant que la list n'est pas NULL et que le maillon ne l'est pas aussi on fait la comparaison
 	{
 		if ((*cmp)(lst->data, lst->next->data) == 0) // si la comparaison est a 0 on fait un swap 
