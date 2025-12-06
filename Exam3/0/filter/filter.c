@@ -6,7 +6,7 @@
 /*   By: tbhuiyan <tbhuiyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:49:25 by tbhuiyan          #+#    #+#             */
-/*   Updated: 2025/12/06 14:10:38 by tbhuiyan         ###   ########.fr       */
+/*   Updated: 2025/12/06 14:35:19 by tbhuiyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(char *s1, char *s2, int n)
+int	ft_strncmp(char *s1, char *s2, int n) // strncmp pour detecter av[1]
 {
 	int	i = 0;
 
@@ -32,27 +32,27 @@ int	main(int ac, char **av)
 	char	buffer[70000];
 	char	c;
 
-	if (ac != 2)
+	if (ac != 2) // verification des arg
 		return (1);
-	len = strlen(av[1]);
+	len = strlen(av[1]); // len de av[1] pour la taille a comparer
 	if (len == 0)
 		return (1);
 	r = read(0, &c, 1);
-	while (r)
+	while (r) // on read et remplis le buffer
 	{
 		buffer[i] = c;
 		i++;
 		r = read(0, &c, 1);
 	}
-	if (r < 0)
+	if (r < 0) // on verifie si la lecture c'est bien passer
 		return (perror("Error :"), 1);
-	buffer[i] = 0;
+	buffer[i] = 0; // on place le \0
 	i = 0;
 	while (buffer[i])
 	{
-		if (ft_strncmp(av[1], &buffer[i], len) == 0)
+		if (ft_strncmp(av[1], &buffer[i], len) == 0) // tant que buffer[i] existe on le compare a av[1]
 		{
-			while (j < len)
+			while (j < len) // si av[1] est present on place les *
 			{
 				write(1, "*", 1);
 				j++;
@@ -60,7 +60,7 @@ int	main(int ac, char **av)
 			i += len;
 			j = 0;
 		}
-		else
+		else // sinon on write normalement
 		{
 			write(1, &buffer[i], 1);
 			i++;
