@@ -6,7 +6,7 @@
 /*   By: tbhuiyan <tbhuiyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:49:25 by tbhuiyan          #+#    #+#             */
-/*   Updated: 2025/12/06 14:35:19 by tbhuiyan         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:49:47 by tbhuiyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_strncmp(char *s1, char *s2, int n) // strncmp pour detecter av[1]
 
 	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
 		i++;
+	if (i == n)
+		return (0);
 	return (s1[i] - s2[i]);
 }
 
