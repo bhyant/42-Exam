@@ -28,7 +28,7 @@ int	exec(char **av, int i , char **envp)
 {
 	int has_pipe, status, pid, fd[2];
 	has_pipe = av[i] && !strcmp(av[i], "|");
-	if (has_pipe && !strcmp(*av, "cd"))
+	if (!has_pipe && !strcmp(*av, "cd"))
 		return cd(av, i);
 	if (has_pipe && pipe(fd) == -1)
 		err("error: fatal\n"), exit(1);
