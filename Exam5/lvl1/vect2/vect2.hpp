@@ -5,10 +5,10 @@
 
 class vect2
 {
-	public:
+	private:
 		int x;
 		int y;
-	private:
+	public:
 		vect2();
 		vect2(int a, int b);
 		vect2(const vect2& src);
@@ -39,6 +39,8 @@ class vect2
 		bool operator==(const vect2& src) const;
 		bool operator!=(const vect2& src) const;
 };
+
+vect2 operator*(int num, const vect2& obj);
 
 std::ostream& operator<<(std::ostream& os, const vect2& src);
 
