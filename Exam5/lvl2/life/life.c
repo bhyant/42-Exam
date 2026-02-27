@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
 void print_map(char *map, int w, int h)
 {
 	for (int y = 0; y < h; y++)
@@ -9,7 +10,7 @@ void print_map(char *map, int w, int h)
 		for (int x = 0; x < w; x++)
 		{
 			if (map[y * w + x])
-				putchar('0');
+				putchar('O');
 			else
 				putchar(' ');
 		}
@@ -17,9 +18,9 @@ void print_map(char *map, int w, int h)
 	}
 }
 
-int count_n(char *map, int w, int h, int x, int y)
+int count_n(char *map, int w, int h,  int x, int y)
 {
-	int nb = 0;
+	int nbr = 0;
 	for (int i = -1; i <= 1; i++)
 	{
 		for (int j = -1; j <= 1; j++)
@@ -31,11 +32,11 @@ int count_n(char *map, int w, int h, int x, int y)
 			if (ny >= 0 && nx >= 0 && ny < h && nx < w)
 			{
 				if (map[ny * w + nx])
-					nb++;
+					nbr++;
 			}
 		}
 	}
-	return nb;
+	return (nbr);
 }
 
 void update_map(char *map, char *new_map, int w, int h)
@@ -44,7 +45,7 @@ void update_map(char *map, char *new_map, int w, int h)
 	{
 		for (int x = 0; x < w; x++)
 		{
-			int n = count_n(map, w, h, x, y);
+			int  n = count_n(map, w, h, x, y);
 			if (map[y * w + x])
 			{
 				if (n == 2 || n == 3)
@@ -63,10 +64,11 @@ void update_map(char *map, char *new_map, int w, int h)
 	}
 }
 
+
 int main(int ac, char **av)
 {
-	if (ac != 4)
-		return 1;
+	if (ac != 4 )
+		return (1);
 	int w = atoi(av[1]);
 	int h = atoi(av[2]);
 	int iterator = atoi(av[3]);
@@ -85,9 +87,9 @@ int main(int ac, char **av)
 			y--;
 		else if (c == 'a' && x > 0)
 			x--;
-		else if (c == 's' && x < h - 1)
+		else if (c == 's' &&  y < h - 1)
 			y++;
-		else if (c == 'd' && x < w - 1)
+		else if (c == 'd' &&  x < w - 1)
 			x++;
 		if (pen)
 			map[y * w + x] = 1;

@@ -23,9 +23,9 @@ class searchable_tree_bag : public tree_bag, public searchable_bag
 				if (cur->value == value)
 					return true;
 				if (value < cur->value)
-					cur = cur->left;
+					cur = cur->l;
 				else
-					cur = cur->right;
+					cur = cur->r;
 			}
 			return false;
 		}
